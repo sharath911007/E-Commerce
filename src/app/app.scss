@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+background: linear-gradient(135deg, #f8f9fa, #e6e6fa);
+
+}
+
+.container-fluid > .row:nth-child(2) {
+    display: flex;
+    flex-wrap: nowrap; 
+    min-height: calc(100vh - 50px);
+    align-items: stretch;
+}
+
+.col-lg-10 {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+    max-height: calc(100vh - 56px);
+}
+

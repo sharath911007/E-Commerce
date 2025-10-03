@@ -1,0 +1,78 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; // spacing between logo and welcome text
+
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    .welcome-text {
+      font-size: 30px;
+      font-weight: 600;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+background: linear-gradient(135deg, #9b1c63 0%, #283593 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-emphasis-color: transparent;
+      margin-top: 0; // reset inline margin
+      margin-left:40px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+
+      img {
+        height: 40px;
+        width: 40px;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: red;
+        color: white;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 50%;
+      }
+    }
+
+    .exit-btn-container img {
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+    }
+  }
+}
+

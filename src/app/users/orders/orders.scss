@@ -1,0 +1,122 @@
+.orders-container {
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .summary-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin-bottom: 30px;
+
+        .card {
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            &.total {
+                border-top: 4px solid #4f46e5;
+            }
+
+            &.delivered {
+                border-top: 4px solid #10b981;
+            }
+
+            &.shipped {
+                border-top: 4px solid #f59e0b;
+            }
+
+            &.pending {
+                border-top: 4px solid #3b82f6;
+            }
+
+            h3 {
+                font-size: 16px;
+                margin-bottom: 8px;
+                color: #333;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: bold;
+                color: #007bff;
+            }
+        }
+    }
+
+    .orders-table {
+        background: #fff;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            thead {
+                background: #f1f1f1;
+
+                th {
+                    padding: 12px;
+                    text-align: left;
+                    font-weight: 600;
+                    color: #444;
+                }
+            }
+
+            tbody {
+                tr {
+                    border-bottom: 1px solid #eee;
+
+                    &:hover {
+                        background: #fafafa;
+                        transition: 0.3s;
+                    }
+
+                    td {
+                        padding: 12px;
+                        color: #555;
+                    }
+
+                    .status {
+                        padding: 5px 10px;
+                        border-radius: 12px;
+                        font-size: 13px;
+                        font-weight: 600;
+
+                        &.delivered {
+                            background: #d4edda;
+                            color: #155724;
+                        }
+
+                        &.shipped {
+                            background: #cce5ff;
+                            color: #004085;
+                        }
+
+                        &.pending {
+                            background: #fff3cd;
+                            color: #856404;
+                        }
+
+                        &.confirmed {
+                            background: #d1ecf1;
+                            color: #0c5460;
+                        }
+
+                        &.cancelled {
+                            background: #f8d7da;
+                            color: #721c24;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<div class="row" *ngIf="role=='Admin'">
+    <div (click)="navigate('Admin/AdminDashboard','AdminDashboard')"
+        [ngClass]="{'active':loaderService.menuID=='AdminDashboard'}">
+        <img src="../../assets/icons/dashboard.png" alt="Dashbaord" class="icons">
+        <label>Admin Dashboard</label>
+    </div>
+    <div (click)="navigate('Admin/UserManagement','UserManagement')"
+        [ngClass]="{'active':loaderService.menuID=='UserManagement'}">
+        <img src="../../assets/icons/usermanagement.png" alt="UserManagement" class="icons">
+        <label>User Management</label>
+    </div>
+    <div (click)="navigate('Admin/ProductManagement','ProductManagement')"
+        [ngClass]="{'active':loaderService.menuID=='ProductManagement'}">
+        <img src="../../assets/icons/productmanagement.png" alt="ProductManagement" class="icons">
+        <label>Product Management</label>
+    </div>
+    <div (click)="navigate('Admin/ReportAnalysis','ReportAnalysis')"
+        [ngClass]="{'active':loaderService.menuID=='ReportAnalysis'}">
+        <img src="../../assets/icons/report.png" alt="ReportAnalysis" class="icons">
+        <label>Report Analysis</label>
+    </div>
+    <div (click)="navigate('Admin/ProfileSettings','ProfileSettings')"
+        [ngClass]="{'active':loaderService.menuID=='ProfileSettings'}">
+        <img src="../../assets/icons/profilesettings.png" alt="ProfileSettings" class="icons">
+        <label>Profile Settings</label>
+    </div>
+</div>
+
+<div class="row" *ngIf="role=='User'">
+    <div (click)="navigate('User/UserDashboard','UserDashboard')" [ngClass]="{'active':loaderService.menuID=='UserDashboard'}">
+        <img src="../../assets/icons/dashboard.png" alt="Dashboard" class="icons">
+        <label>User Dashboard</label>
+    </div>
+    <div (click)="navigate('User/Orders','Orders')" [ngClass]="{'active':loaderService.menuID=='Orders'}">
+        <img src="../../assets/icons/orders.png" alt="Orders" class="icons">
+        <label>Orders</label>
+    </div>
+    <div (click)="navigate('User/PaymentHistory','PaymentHistory')"
+        [ngClass]="{'active':loaderService.menuID=='PaymentHistory'}">
+        <img src="../../assets/icons/payment.png" alt="Payment History" class="icons">
+        <label>Payment History</label>
+    </div>
+    <div (click)="navigate('User/Cart','Cart')" [ngClass]="{'active':loaderService.menuID=='Cart'}">
+        <img src="../../assets/icons/cart.png" alt="Cart" class="icons">
+        <label>Cart</label>
+    </div>
+    <div (click)="navigate('User/Profile','Profile')" [ngClass]="{'active':loaderService.menuID=='Profile'}">
+        <img src="../../assets/icons/profilesettings.png" alt="Profile" class="icons">
+        <label>Profile</label>
+    </div>
+</div>

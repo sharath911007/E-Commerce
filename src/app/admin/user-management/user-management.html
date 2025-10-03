@@ -1,0 +1,42 @@
+<div class="user-management-container">
+  <div class="top-bar">
+    <div class="search-bar">
+      <input type="text" placeholder="Search users...">
+    </div>
+    <div class="d-flex align-items-center">
+      <img src="../../../assets/icons/user.png" style="width: 50px;">
+      <h3 class="mt-2 ms-2">User Management</h3>
+    </div>
+  </div>
+
+
+
+  <table class="users-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of usersData;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{data.userName}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.phoneNumber}}</td>
+        <td>
+          <span class="status-dot" [ngClass]="{'green-dot':data.status=='Active',
+          'red-dot':data.status=='Suspended',
+          'blue-dot':data.status=='Inactive'}"></span> {{data.status}}
+        </td>
+        <td>
+          <button class="delete-btn" (click)="deleteUsers(data.id)">Delete User</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

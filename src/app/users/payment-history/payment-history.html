@@ -1,0 +1,34 @@
+<div class="payment-status-container">
+  <h2 class="title">My Payment Status</h2>
+
+  <table class="payments-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let payment of paymentsData; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{payment.product.name}}</td>
+        <td>{{payment.product.price}}</td>
+        <td>{{payment.date | date:'short'}}</td>
+        <td>
+          <span class="status-dot" [ngClass]="{
+            'green-dot': payment.status=='Completed',
+            'blue-dot': payment.status=='Pending',
+            'red-dot': payment.status=='Failed'
+          }"></span> {{payment.status}}
+        </td>
+        <td>
+          <button class="view-btn" (click)="viewPayment(payment.id)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

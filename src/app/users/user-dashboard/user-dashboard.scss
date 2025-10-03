@@ -1,0 +1,141 @@
+.ud-shell {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+  padding: 2rem;
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .muted {
+      color: #777;
+      font-size: 0.95rem;
+    }
+
+    .hero-left {
+      span {
+        font-size: 80px;
+        font-weight: bold;
+        background: linear-gradient(90deg, #111111, #4b5563);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+    .hero-right {
+      display: flex;
+      gap: 1.5rem;
+
+      .kpi {
+        display: flex;
+        gap: 1.5rem;
+
+        .kpi-item {
+          background: #fff;
+          padding: 1rem 1.2rem;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          text-align: center;
+
+          .kpi-value {
+            font-size: 1.6rem;
+            font-weight: 600;
+          }
+
+          .kpi-label {
+            color: #777;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+
+  .product-section {
+    margin-bottom: 3rem;
+
+    .category-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+
+    .product-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); // 4 products per row
+      gap: 2rem;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-img {
+          width: 100%;
+          height: 180px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        .product-info {
+          padding: 1rem;
+
+          h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+          }
+
+          .price {
+            font-size: 1rem;
+            color: #10b981;
+            font-weight: 500;
+            margin-bottom: 1rem;
+          }
+
+          .btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

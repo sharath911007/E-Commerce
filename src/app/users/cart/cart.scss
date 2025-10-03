@@ -1,0 +1,90 @@
+.cart-container {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+    thead {
+      background: #f1f1f1;
+
+      th {
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+        color: #444;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #eee;
+        transition: 0.3s;
+
+        &:hover {
+          background: #fafafa;
+        }
+
+        td {
+          padding: 12px;
+          color: #555;
+
+          button {
+            padding: 3px 8px;
+            margin: 0 4px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+
+          .delete-btn {
+            background-color: #ef4444;
+            color: #fff;
+
+            &:hover {
+              background-color: #c82333;
+            }
+          }
+
+          .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+
+            &.green-dot { background-color: #10b981; }
+            &.blue-dot { background-color: #3b82f6; }
+            &.red-dot { background-color: #ef4444; }
+          }
+        }
+      }
+    }
+  }
+
+  .cart-summary {
+    margin-top: 20px;
+    text-align: right;
+
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #007bff;
+    }
+  }
+}

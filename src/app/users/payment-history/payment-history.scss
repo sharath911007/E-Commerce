@@ -1,0 +1,72 @@
+.payment-status-container {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+    thead {
+      background: #f1f1f1;
+
+      th {
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+        color: #444;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #eee;
+        transition: 0.3s;
+
+        &:hover {
+          background: #fafafa;
+        }
+
+        td {
+          padding: 12px;
+          color: #555;
+
+          button.view-btn {
+            padding: 5px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+
+          .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+
+            &.green-dot { background-color: #10b981; }
+            &.blue-dot { background-color: #3b82f6; }
+            &.red-dot { background-color: #ef4444; }
+          }
+        }
+      }
+    }
+  }
+}

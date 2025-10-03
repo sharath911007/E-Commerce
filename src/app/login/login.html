@@ -1,0 +1,36 @@
+<div class="login-wrapper">
+    <div class="login-card">
+        <div class="login-left">
+            <h1>Welcome to website</h1>
+            <p class="">
+                commercial activities including the electronic buying or selling products and services which are
+                conducted on online platforms or over the Internet
+            </p>
+        </div>
+
+        <div class="login-right">
+            <h2 class="login-title">Login</h2>
+            <div class="form-div">
+                <div class="form-group">
+                    <input type="text" placeholder="Username" [(ngModel)]="ID" name="username" />
+                </div>
+
+                <div class="form-group">
+                    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" />
+                </div>
+
+                <div class="form-group">
+                    <select [(ngModel)]="role" name="role">
+                        <option value="">Select Role</option>
+                        <option *ngFor="let data of roleData" [value]="data.role">{{ data.role }}</option>
+                    </select>
+                </div>
+                <button type="button" class="login-btn" (click)="onLogin()">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-footer">
+        Designed by  Sharath Kumar
+    </div>
+</div>

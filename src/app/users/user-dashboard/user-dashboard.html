@@ -1,0 +1,49 @@
+<div class="ud-shell">
+
+  <!-- top hero / greeting -->
+  <section class="hero">
+    <div class="hero-left">
+      <span>Your, Dashbaord</span>
+      <p class="muted">Your electronics — curated, tracked, and ready.</p>
+    </div>
+
+    <!-- <div class="hero-right">
+      <div class="kpi">
+        <div class="kpi-item">
+          <div class="kpi-value">{{ kpis.activeBookings }}</div>
+          <div class="kpi-label">Active Bookings</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value">{{ kpis.wishlist }}</div>
+          <div class="kpi-label">Wishlist</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value">₹{{ kpis.wallet }}</div>
+          <div class="kpi-label">Wallet</div>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- product section -->
+  <section class="product-section" *ngFor="let cat of ['mobile','laptop','tv']">
+    <h2 class="category-title">
+      {{ cat === 'mobile' ? 'Mobiles' : cat === 'laptop' ? 'Laptops' : "TV's" }}
+    </h2>
+
+    <div class="product-row">
+      <div class="product-card" *ngFor="let p of featured | filterCategory:cat">
+        <div class="product-img">
+          <img [src]="p.img" alt="{{p.name}}">
+        </div>
+        <div class="product-info">
+          <h3>{{p.name}}</h3>
+          <p class="price">{{p.price}}</p>
+          <button class="btn primary" (click)="addToCart(p)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<img src="" alt="">
+

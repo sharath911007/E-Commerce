@@ -1,0 +1,30 @@
+<div class="app-header">
+    <div class="header-left">
+        <div class="logo">
+            <img src="../../assets/icons/elogo.webp" alt="Logo">
+        </div>
+        <div class="welcome-text" style="margin-top: 2px;">
+            <span *ngIf="role=='User'" class="gradient-text">Welcome back,{{userName}}</span>
+            <span *ngIf="role=='Admin'" class="gradient-text">Welcome back,{{adminName}}</span>
+        </div>
+    </div>
+    <div class="header-right">
+        <div class="cart-icon" (click)="exit()" *ngIf="role=='User'">
+            <img src="../../assets/icons/cart.png" alt="Cart">
+            <span class="cart-count">3</span>
+        </div>
+        <div class="language-selector">
+            <select class="form-select">
+                <option value="ind">India</option>
+                <option value="ger">Germany</option>
+                <option value="usa">USA</option>
+            </select>
+        </div>
+
+
+        <!-- Logout -->
+        <div class="exit-btn-container">
+            <img src="../../assets/icons/logout.png" alt="Logout" (click)="navigate('Login')">
+        </div>
+    </div>
+</div>

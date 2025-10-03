@@ -1,0 +1,77 @@
+<div class="product-management-container">
+  <div class="top-bar">
+    <h2>Product Management</h2>
+    <button class="add-btn" (click)="openModal(popup)">+ Add Product</button>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search products...">
+  </div>
+
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Availability</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let product of products | search:searchTerm"> -->
+      <tr *ngFor="let data of productsData;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{data.productName}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.price}}</td>
+        <td>{{data.availablity}}</td>
+        <td>
+          <button class="edit-btn" (click)="openModal(popup,data.id)">Edit</button>
+          <button class="delete-btn" (click)="deleteProducts(data.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #popup let-modal>
+  <div class="modal-header">
+    <h4>Insert Products</h4>
+    <button class="btn btn-close" (click)="modal.close('Cross Click')"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="productsForm">
+      <div class="row">
+        <div class="col-lg-3">
+          <label>Product Name</label>
+          <input type="text" class="form-control" placeholder="Product Name" formControlName="ProductName">
+        </div>
+        <div class="col-lg-3">
+          <label>Category</label>
+          <input type="text" class="form-control" placeholder="Category" formControlName="Category">
+        </div>
+        <div class="col-lg-3">
+          <label>Price</label>
+          <input type="text" class="form-control" placeholder="Price" formControlName="Price">
+        </div>
+        <div class="col-lg-3">
+          <label>Availability</label>
+          <input type="text" class="form-control" placeholder="Availablity" formControlName="Availablity">
+        </div>
+        <div class="col-lg-12">
+          <label>Image</label>
+          <input type="file" class="form-control" (change)="onFileSelect($event)">
+        </div>
+        <div class="col-lg-12">
+          <label>Description</label>
+          <textarea class="form-control" placeholder="Description" formControlName="Description"></textarea>
+        </div>
+        <div>
+          <button class="btn btn-primary" (click)="save()">save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
